@@ -1,0 +1,25 @@
+<div *ngIf="parentListInfo">
+	<label>Name:</label>
+	<span *ngIf="isEditMode"> {{childUser.name}}</span>
+	<input type="text" *ngIf="!isEditMode" [(ngModel)]="childUser.name">
+	<br>
+	<label>Designation:</label>
+	<span *ngIf="isEditMode"> {{childUser.designation}}</span>
+	<input type="text" *ngIf="!isEditMode" [(ngModel)]="childUser.designation">
+	<br>
+	<label>Location:</label>
+	<span *ngIf="isEditMode"> {{childUser.location}}</span>
+	<input type="text" *ngIf="!isEditMode" [(ngModel)]="childUser.location">
+	<br>
+	<label>Description:</label>
+	<span *ngIf="isEditMode"> {{childUser.description}}</span>
+	<textarea *ngIf="!isEditMode" cols="30" rows="2" [(ngModel)]="childUser.description"></textarea>
+	<br>
+	<div style="margin-top: 2%">
+		<button class="btn btn-primary" (click)="onEdit()" *ngIf="showEditBtn">Edit</button>
+		<button class="btn btn-success" (click)="onUpdate()" *ngIf="!showEditBtn">Update</button>
+
+		<button class="btn btn-warning" (click)="onCancel()" style="margin-left: 2%">Cancel</button>
+	</div>
+
+</div>

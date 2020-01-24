@@ -25,3 +25,25 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+React Life Cycle:
+- 4 phase
+
+1. Initialization
+    a) Constructor()  //set default value for props and state
+
+2. Mounting
+    a) componentWillMount() //calls before render
+    b) render() //render method
+    c) componentDidMount() //calls after render
+
+3. Updating
+    a) shouldComponentUpdate(nextProps, nextState) //calls whenever 
+                                                        state or props changed
+    b) componentWillReceiveProps(nextProps) // calls whenver props reveived
+    c) componentWillUpdate() // calls before any update
+    d) render() // render method
+    e) componentDidUpdate() // calls after any update
+
+4. Unmounting
+    a) componentWillUnmount() // calls when component get destroyed

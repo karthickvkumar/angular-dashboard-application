@@ -1,0 +1,21 @@
+<div>
+    <h2 [class.activeClass]="showColor">{{titleMessge}}</h2>
+    <!-- <img [src]="imgUrl" width="100" height="50" /> -->
+
+    <label>Enter Email ID:</label>
+    <input type="email" [(ngModel)]="loginForm.email">
+    <br>
+    <span style="background-color: red" *ngIf="validateEmail">Incorrect Email</span>
+    <br>
+    <label>Enter Passworde:</label>
+    <input type="password" [(ngModel)]="loginForm.password">
+    <br>
+    <!-- <span style="background-color: red" *ngIf="validation.passwordError">Incorrect Password</span>
+    <br> -->
+    <!-- <button (click)="validateLogin()">Login</button> -->
+    <br>
+    <button [routerLink]="['/home']">Login (via HTML)</button>
+    <br>
+    <button (click)="validateLogin()">Login (via TS file)</button>
+    <br>
+</div>

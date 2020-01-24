@@ -1,0 +1,19 @@
+<h5>Candidate Information</h5>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of emplpoyeeList">
+            <td>{{employee.name}}</td>
+            <td>{{employee.des}}</td>
+            <td>{{employee.loc}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<button (click)="onSave()">Update</button>

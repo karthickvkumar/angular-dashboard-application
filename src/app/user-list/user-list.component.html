@@ -1,0 +1,11 @@
+<div>
+	<ul class="list-group" *ngFor="let user of userList">
+	  <li class="list-group-item" [ngClass]="isSelected == user ? 'active' : ''" (click)="onSelect(user)">
+	  	<span>{{user.name}}</span>
+	  	<br>
+	  	<span>{{user.designation}}</span>
+	  	<br>
+	  	<span>{{user.location}}</span>
+	  </li>
+	</ul>
+</div>

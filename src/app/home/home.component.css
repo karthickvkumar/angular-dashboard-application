@@ -1,0 +1,8 @@
+.is-active{
+	background-color: green;
+	color: white;
+}
+
+.nav-li{
+	cursor: pointer;
+}

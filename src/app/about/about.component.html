@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-6">
+		<ul class="list-group" *ngFor="let user of userList">
+			<li class="list-group-item" [ngClass]="selectedUserDetail == user ? 'active' : ''" (click)="onSelect(user)">
+				<span>{{user.name}}</span>
+				<br>
+				<span>{{user.designation}}</span>
+			</li>
+		</ul>
+		<button (click)="onUpdate()">Update</button>
+		<button class="btn btn-primary" (click)="onLoadData()">Refresh</button>
+	</div>
+	<div class="col-6">
+		<app-user-info [param]="{key : selectedUserDetail}" [data]="selectedUserDetail"
+			(changeInfo)="handleChangeInfo($event)"></app-user-info>
+	</div>
+</div>

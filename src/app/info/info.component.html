@@ -1,0 +1,12 @@
+<div>
+	<h4>Info-Component</h4>
+	<label>Enter Title</label>
+	<br>
+	<textarea [(ngModel)]="textContent"></textarea>
+	<br>
+	<span>Display Message {{textContent}}</span>
+	<!-- <button (click)="onSend()">Send</button> -->
+</div>
+<div>
+	<app-info-child [param]="textContent"></app-info-child>
+</div>

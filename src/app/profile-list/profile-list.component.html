@@ -1,0 +1,44 @@
+<h2>HTML Table</h2>
+<div>
+    <label>Enter employee name :</label>
+    <input type="text" [(ngModel)]="employee.name" />
+    <br>
+    <label>Enter employee job :</label>
+    <input type="text" [(ngModel)]="employee.job" />
+</div>
+<button (click)="onLoadAPI()">Submit</button>
+<table>
+    <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+        <th>Action</th>
+    </tr>
+    <ng-container *ngIf="false">
+        <tr *ngFor="let eachItem of companyInfo;let i = index;" [ngStyle]="{'color': getColor(eachItem.country)}"
+            [ngClass]="{'className1': eachItem.country == 'India' ? true : false, 'className2': true}">
+            <td>{{eachItem.companyName}}</td>
+            <td>{{eachItem.contact}}</td>
+            <td>{{eachItem.country}}</td>
+            <td>
+                <button (click)="onEdit(i, eachItem)">Edit</button>
+                <br>
+                <button (click)="onDelete(i, eachItem)">Delete</button>
+            </td>
+        </tr>
+    </ng-container>
+    <ng-container *ngIf="true">
+        <tr *ngFor="let eachItem of profileList;let i = index;">
+            <td>{{eachItem.first_name}}</td>
+            <td>{{eachItem.last_name}}</td>
+            <td>{{eachItem.email}}</td>
+            <td>
+                <button (click)="onEdit(i, eachItem)">Edit</button>
+                <br>
+                <button (click)="onDelete(i, eachItem)">Delete</button>
+            </td>
+        </tr>
+    </ng-container>
+
+
+</table>

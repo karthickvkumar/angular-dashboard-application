@@ -1,0 +1,51 @@
+<div>
+    <label>Enter employee name:</label>
+    <input type="text" [(ngModel)]="employeeInfo.name" />
+    <span style="color: red;" *ngIf="validate.name">Please enter employee name</span>
+    <br>
+    <label>Enter employee dob:</label>
+    <input type="date" [(ngModel)]="employeeInfo.dob" />
+    <span style="color: red;" *ngIf="validate.dob">Please enter employee dob</span>
+
+    <br>
+    <label>Enter employee designation:</label>
+    <input type="text" [(ngModel)]="employeeInfo.designation" />
+    <span style="color: red;" *ngIf="validate.designation">Please enter employee designation</span>
+
+    <br>
+    <label>Enter employee location:</label>
+    <input type="text" [(ngModel)]="employeeInfo.location" />
+    <span style="color: red;" *ngIf="validate.location">Please enter employee location</span>
+    <br>
+    <button (click)="onSubmit()">Add Employee</button>
+    <br>
+    <div>
+        <h3>List of Employee</h3>
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Designation</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employeeList; let empIndex = index;"
+                    [class.isActive]="onSelectRow == emp ? true : false" (click)="onClickRow(emp)">
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.dob}}</td>
+                    <td>{{emp.designation}}</td>
+                    <td>{{emp.location}}</td>
+                    <td>
+                        <div>
+                            <button (click)="onEdit(empIndex)">Edit</button>
+                            <button (click)="onDelete(empIndex)">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

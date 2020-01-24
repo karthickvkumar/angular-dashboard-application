@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-renderer": [
+        "dist/ngx-renderer"
+      ],
+      "ngx-renderer/*": [
+        "dist/ngx-renderer/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

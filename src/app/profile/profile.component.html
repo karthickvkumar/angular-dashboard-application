@@ -1,0 +1,45 @@
+<div style="margin-top: 20px">
+	<button (click)="onLoadData()">Refresh</button>
+	<div *ngIf="employeeList.length">
+		<table id="employes">
+			<thead>
+				<!-- <th>Id</th> -->
+				<th>Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Action</th>
+			</thead>
+			<tbody>
+
+				<tr appTableEdit [fields]="{'field1' :'firstname', 'field2' : 'lastname', 'field3': 'email'}"
+					*ngFor="let employee of employeeList">
+					<!-- <td>{{employee.id}}</td> -->
+					<td>
+						<span id="display-firstname">{{employee.first_name}}</span>
+						<input id="edit-firstname" type="text" class="hidden" [(ngModel)]="employee.first_name">
+					</td>
+					<td>
+						<span id="display-lastname">{{employee.last_name}}</span>
+						<input id="edit-lastname" type="text" class="hidden" [(ngModel)]="employee.last_name">
+					</td>
+					<td>
+						<span id="display-email">{{employee.email}}</span>
+						<input id="edit-email" type="text" class="hidden" [(ngModel)]="employee.email">
+					</td>
+					<!-- <td>
+							<button>Delete</button>
+						</td> -->
+					<!-- Nested ngFOR -->
+					<td>
+						<button>Delete</button>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+	<div *ngIf="!employeeList.length">
+		<h3>Please wait, we're loading your page...</h3>
+	</div>
+
+</div>
